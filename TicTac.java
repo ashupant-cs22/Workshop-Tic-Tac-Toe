@@ -21,14 +21,9 @@ public class TicTac {
     public static void main(String[] args) {
         System.out.println("Welcome to Tic Tac Toe Game");
         Board();
-        userinfo();
-
-        toss();
-        gamePlay();
-
-
-        toss();
-
+        Userinfo();
+        Toss();
+        GamePlay();
     }
 
     public static void Board() {
@@ -37,7 +32,7 @@ public class TicTac {
         System.out.println(gameBoard[6] + " | " + gameBoard[7] + " | " + gameBoard[8]);
     }
 
-    public static void userinfo() {
+    public static void Userinfo() {
         Scanner in = new Scanner(System.in);
         System.out.println(" Select Your Marker (O or X): ");
         player = in.next().charAt(0);
@@ -55,7 +50,7 @@ public class TicTac {
 
 
 
-    public  static void toss(){
+    public  static void Toss(){
         int result=(int)Math.floor(Math.random() * 10) % 2;
         if (result==1){
             flag=0;
@@ -68,7 +63,7 @@ public class TicTac {
     }
 
 
-    public static void gamePlay(){
+    public static void GamePlay(){
         while(moves < 9){
             Scanner sc=new Scanner(System.in);
             System.out.println("Please enter the position between 0-8");
