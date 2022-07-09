@@ -8,8 +8,15 @@ public class TicTac {
     private static char computer;
 
     private static int flag=0;
+    private static int moves=0;
+    static char[] gameBoard = new char[10];
+
+
+
+    private static int flag=0;
 
     static char[] gameBoard = new char[10];
+
 
     public static void main(String[] args) {
         System.out.println("Welcome to Tic Tac Toe Game");
@@ -17,8 +24,10 @@ public class TicTac {
         userinfo();
 
         toss();
+        gamePlay();
 
 
+        toss();
 
     }
 
@@ -43,6 +52,9 @@ public class TicTac {
     }
 
 
+
+
+
     public  static void toss(){
         int result=(int)Math.floor(Math.random() * 10) % 2;
         if (result==1){
@@ -52,6 +64,24 @@ public class TicTac {
         else{
             flag=1;
             System.out.println("Computer will play first");
+        }
+    }
+
+
+    public static void gamePlay(){
+        while(moves < 9){
+            Scanner sc=new Scanner(System.in);
+            System.out.println("Please enter the position between 0-8");
+            int position=sc.nextInt();
+            if(element[position]=='+'){
+                element[position]=player;
+                Board();
+                moves++;
+                gamePlay();
+            }
+            else {
+                System.out.println("Invalid move");
+            }
         }
     }
 
