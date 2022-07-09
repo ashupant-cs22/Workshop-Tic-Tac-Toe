@@ -6,8 +6,15 @@ public class TicTac {
     private static char[] element;
     private static char player;
     private static char computer;
+
     private static int flag=0;
     private static int moves=0;
+    static char[] gameBoard = new char[10];
+
+
+
+    private static int flag=0;
+
     static char[] gameBoard = new char[10];
 
 
@@ -15,8 +22,12 @@ public class TicTac {
         System.out.println("Welcome to Tic Tac Toe Game");
         Board();
         userinfo();
+
         toss();
         gamePlay();
+
+
+        toss();
 
     }
 
@@ -40,6 +51,10 @@ public class TicTac {
         }
     }
 
+
+
+
+
     public  static void toss(){
         int result=(int)Math.floor(Math.random() * 10) % 2;
         if (result==1){
@@ -51,6 +66,7 @@ public class TicTac {
             System.out.println("Computer will play first");
         }
     }
+
 
     public static void gamePlay(){
         while(moves < 9){
@@ -68,5 +84,6 @@ public class TicTac {
             }
         }
     }
+
 
 }
